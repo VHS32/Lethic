@@ -22,22 +22,24 @@ DWORD WINAPI Payload_1()
 
     while (1)
     {
-        if (rand() % 4 == 0)
-        {
-            BitBlt(hdc, rand() % w, 1, 10, h, hdc, rand() % w, 0, SRCPAINT);
-        }
-        else if (rand() % 4 == 1)
-        {
-            BitBlt(hdc, rand() % w, -1, -10, h, hdc, rand() % w, 0, SRCPAINT);
-        }
-        else if (rand() % 4 == 2)
-        {
-            BitBlt(hdc, 1, rand() % h, w, 66, hdc, 0, rand() % h, SRCPAINT);
-        }
-        else if (rand() % 4 == 3)
-        {
-            BitBlt(hdc, -1, rand() % h, w, -66, hdc, 0, rand() % h, SRCPAINT);
-        }
+		switch (rand() % 4)
+		{
+			case 0:
+			    BitBlt(hdc, rand() % w, 1, 10, h, hdc, rand() % w, 0, SRCPAINT);
+			break;
+			
+			case 1:
+				BitBlt(hdc, rand() % w, -1, -10, h, hdc, rand() % w, 0, SRCPAINT);
+        	break;
+			
+			case 2:
+				BitBlt(hdc, 1, rand() % h, w, 66, hdc, 0, rand() % h, SRCPAINT);
+        	break;
+			
+			case 3:
+				BitBlt(hdc, -1, rand() % h, w, -66, hdc, 0, rand() % h, SRCPAINT);
+			break;
+		}
     }
 }
 
