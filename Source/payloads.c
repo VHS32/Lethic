@@ -15,8 +15,6 @@ DWORD WINAPI Payload_1()
 {
     HWND hwnd = GetDesktopWindow();
     HDC hdc = GetDC(hwnd);
-    HRGN rgn;
-    RECT rect;
     int w = GetSystemMetrics(SM_CXSCREEN);
     int h = GetSystemMetrics(SM_CYSCREEN);
 
